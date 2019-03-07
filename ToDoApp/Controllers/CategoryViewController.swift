@@ -8,29 +8,35 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 class CategoryViewController: UITableViewController {
-
-    var categories = [Category]()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let realm = try! Realm()
+
+    var categories: Results<Category>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCategories()
+        
+       self.loadCategories()
 
     }
 
     // MARK: - TableView Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+       
+       return categories?.count ?? 1
+        
+        //daca categories nu e 0, atunci count, dar daca e 0, atunci categories foloseste valoarea 1
+        
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        cell.textLabel?.text = categories[indexPath.row].name
+         cell.textLabel?.text = categories?[indexPath.row].name ?? "No categories added yet"
         
         return cell
     }
@@ -43,34 +49,8 @@ class CategoryViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ToDoListViewController
         if let indexPath = tableView.indexPathForSelectedRow{
-            destinationVC.selectedCategory = categories[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
         }
-    }
-    
-    // MARK: - Data Manipulation Methods
-    
-    func saveCategories(){
-        
-        do{
-            try context.save()
-        } catch{
-            print("error \(error)")
-        }
-        
-        tableView.reloadData()
-    }
-    
-    //func loadItems
-    //with = external parameter;   request = internal parameter-inside function
-    // dupa "=" reprezinta default parameter
-    func loadCategories(){
-        let request : NSFetchRequest<Category> = Category.fetchRequest()
-        do{
-            categories = try context.fetch(request)
-        }catch{
-            print("Error loading Categories")
-        }
-        tableView.reloadData()
     }
     
     
@@ -82,12 +62,10 @@ class CategoryViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
             //what will happen once the user clicks the Add item button on our UIAlert
             
-            let newCategory = Category(context: self.context )
+            let newCategory = Category()
             newCategory.name = textField.text!
-            //newCategory.done = false
-            self.categories.append(newCategory)
             
-            self.saveCategories()
+            self.save(category: newCategory)
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
@@ -100,7 +78,31 @@ class CategoryViewController: UITableViewController {
     }
     
    
-   
+    // MARK: - Data Manipulation Methods
+    
+    func save(category: Category){
+        
+        do{
+            try realm.write {
+                realm.add(category)
+            }
+        } catch{
+            print("error \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    //func loadItems
+    //with = external parameter;   request = internal parameter-inside function
+    // dupa "=" reprezinta default parameter
+    func loadCategories(){
+        
+        categories = realm.objects(Category.self)
+        
+        self.tableView.reloadData()
+    }
+    
     
     
     

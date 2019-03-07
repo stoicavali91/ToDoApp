@@ -13,7 +13,8 @@
 		853E157E21FA11E800089BF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853E157C21FA11E800089BF2 /* Main.storyboard */; };
 		853E158021FA11E800089BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853E157F21FA11E800089BF2 /* Assets.xcassets */; };
 		853E158321FA11E800089BF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853E158121FA11E800089BF2 /* LaunchScreen.storyboard */; };
-		853E15B32204967100089BF2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 853E15B12204967100089BF2 /* DataModel.xcdatamodeld */; };
+		85FC4DEA2231658800B6FF7F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC4DE92231658800B6FF7F /* Item.swift */; };
+		85FC4DEC2231659600B6FF7F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC4DEB2231659600B6FF7F /* Category.swift */; };
 		C3E9CC33B8A0C1773E55B05F /* Pods_ToDoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D1EE32890CF4C1D8F7093 /* Pods_ToDoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +28,8 @@
 		853E157F21FA11E800089BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853E158221FA11E800089BF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		853E158421FA11E800089BF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		853E15B22204967100089BF2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		85FC4DE92231658800B6FF7F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		85FC4DEB2231659600B6FF7F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F282448D7E1C62A34E3CAB84 /* Pods-ToDoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoApp/Pods-ToDoApp.release.xcconfig"; sourceTree = "<group>"; };
 		F81D1EE32890CF4C1D8F7093 /* Pods_ToDoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,7 +80,8 @@
 		853E158C21FF598600089BF2 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				853E15B12204967100089BF2 /* DataModel.xcdatamodeld */,
+				85FC4DEB2231659600B6FF7F /* Category.swift */,
+				85FC4DE92231658800B6FF7F /* Item.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -248,10 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FC4DEA2231658800B6FF7F /* Item.swift in Sources */,
 				850D8DD1220DED99002FD25A /* CategoryViewController.swift in Sources */,
 				853E157B21FA11E800089BF2 /* ToDoListViewController.swift in Sources */,
-				853E15B32204967100089BF2 /* DataModel.xcdatamodeld in Sources */,
 				853E157921FA11E800089BF2 /* AppDelegate.swift in Sources */,
+				85FC4DEC2231659600B6FF7F /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,19 +457,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		853E15B12204967100089BF2 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				853E15B22204967100089BF2 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 853E15B22204967100089BF2 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 853E156D21FA11E800089BF2 /* Project object */;
 }
