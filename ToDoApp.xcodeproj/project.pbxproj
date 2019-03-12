@@ -10,11 +10,11 @@
 		850D8DD1220DED99002FD25A /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D8DD0220DED99002FD25A /* CategoryViewController.swift */; };
 		853E157921FA11E800089BF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E157821FA11E800089BF2 /* AppDelegate.swift */; };
 		853E157B21FA11E800089BF2 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E157A21FA11E800089BF2 /* ToDoListViewController.swift */; };
-		853E157E21FA11E800089BF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853E157C21FA11E800089BF2 /* Main.storyboard */; };
 		853E158021FA11E800089BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853E157F21FA11E800089BF2 /* Assets.xcassets */; };
 		853E158321FA11E800089BF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853E158121FA11E800089BF2 /* LaunchScreen.storyboard */; };
 		85FC4DEA2231658800B6FF7F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC4DE92231658800B6FF7F /* Item.swift */; };
 		85FC4DEC2231659600B6FF7F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC4DEB2231659600B6FF7F /* Category.swift */; };
+		85FD498F223827C2006657C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853E157C21FA11E800089BF2 /* Main.storyboard */; };
 		C3E9CC33B8A0C1773E55B05F /* Pods_ToDoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81D1EE32890CF4C1D8F7093 /* Pods_ToDoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -189,9 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FD498F223827C2006657C2 /* Main.storyboard in Resources */,
 				853E158321FA11E800089BF2 /* LaunchScreen.storyboard in Resources */,
 				853E158021FA11E800089BF2 /* Assets.xcassets in Resources */,
-				853E157E21FA11E800089BF2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
